@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<constant name="struts.enable.DynamicMethodInvocation" value="false" />
+	<constant name="struts.devMode" value="false" />
+	<constant name="struts.custom.i18n.resources" value="ApplicationResources" />
+	<constant name="struts.action.excludePattern" value="/DoReady"/>
+	<package name="default" extends="struts-default" namespace="/">
+	
+		<action name="login" class="com.wuyufei.login.LoginAction">
+			<result name="success">Welcome.jsp</result>
+			<result name="error">Login.jsp</result>
+			<result name="input">Login.jsp</result>
+		</action>
+		<action name="reg" class="com.wuyufei.reg.RegAction">
+			<result name="success">SuccessCustomer.jsp</result>
+			<result name="error">Reg.jsp</result>
+			<result name="input">Reg.jsp</result>
+		</action>
+		<action name="json" class="com.wuyufei.cart.JsonAction">
+			<result name="success">../navigation.html</result>
+		</action>
+		<action name="emailer" class="com.wuyufei.cart.EmailerAction">
+			<result name="success">../navigation.html</result>
+		</action>
+	</package>
+
+</struts>

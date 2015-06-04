@@ -1,0 +1,81 @@
+#wrap{
+	width: 100%;
+	margin: 0 auto;
+}
+#content{
+	position: absolute;
+	width: 400px;
+	top:35%;
+	left: 30%;
+	text-align: center;
+}
+#top{
+	position: absolute;
+	width: 400px;
+	top:20%;
+	left: 35%;
+	text-align: center;
+	font-size: 80px;
+	color: #fff;
+}
+.form{
+	width: 60%;
+	
+	position: absolute;
+}
+.form form{
+		
+	opacity: 0.8;
+
+}
+
+.search_form{
+
+}
+
+#province{
+	position: absolute;
+	top: 0%;
+	left: 2px;
+	width: 130px;
+	padding: 23px;
+	font-size: 20px;
+	outline: none;
+	border: none;
+	background: #fff;
+	margin: 0px;
+border-radius: 1px; 
+
+}
+#province2{	
+	width: 180px;
+    position: absolute;
+    left: 135px;
+	padding: 23px;
+	font-size: 20px;
+	outline: none;
+	border: none;
+	background: #fff;
+	margin: 0px;
+	border-radius: 1px; 
+}
+#city{	
+	width: 210px;
+position: absolute;
+	padding: 23px;
+    left: 318px;
+	font-size: 20px;
+	outline: none;
+	border: none;
+	background: #fff;
+	margin: 0px;
+	border-radius: 1px; 
+}
+
+#button{
+	position: absolute;
+	left: 533px;
+	background: #F0E9E4;
+	opacity: 0.8;
+	border-radius: 1px; 
+}

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>cart</title>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/shop.js"></script>
+<link rel="stylesheet" type="text/css" href="css/cartStyle.css">
+<link href="css/checkoutbts.css" rel="stylesheet" type="text/css"
+	media="all" />
+<link href="css/checkout.css" rel="stylesheet" type="text/css"
+	media="all" />
+</head>
+<body>
+	<div class="user-desc">
+		<div class="container">
+			<ul>
+				<li><a href="checkout.html">Checkout</a></li>
+				<li><i class="user"></i><a href="#">My Account</a></li>
+				<li><i class="cart"></i><a href="#">Cart </a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="header">
+		<div class="header-top">
+			<div class="container">
+				<div class="logo">
+					<a href="#"><img src="images/index/foodLogo.png" alt="" /></a>
+					<!-- logo 的图片 -->
+				</div>
+				<div class="top-menu">
+					<span class="menu"> </span>
+					<ul class="cl-effect-15">
+						<li><a href="#" data-hover="HOME">HOME</a></li>
+						<li><a href="#" data-hover="PRODUCTS">PRODUCTS</a></li>
+						<li><a href="#" data-hover="CONTACT">CONTACT</a></li>
+					</ul>
+				</div>
+
+				<div class="clearfix"></div>
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		<div class="My-wish-section">
+			<section id="wish">
+				<div class="my-wish-content">
+
+					<div class="coats sing-c">
+						<h3 class="c-head">Your Bascket</h3>
+						<form action="cart.html" id="shopping-cart" method="post">
+							<table class="shopping-cart">
+								<thead>
+									<tr>
+										<th scope="col">Item</th>
+										<th scope="col">Qty</th>
+										<th scope="col">Price</th>
+									</tr>
+								</thead>
+								<tbody></tbody>
+							</table>
+					</div>
+
+				</div>
+				<h4 id="sub-total">
+					<strong>Sub Total</strong>:<span id="stotal"></span>
+				</h4>
+			</section>
+		</div>
+	</div>
+
+	<div class="content-section">
+		<div class="container">
+
+			<div class="col-md-3 about-us">
+				<ul id="shopping-cart-actions">
+					<li><input type="submit" name="update" id="update-cart"
+						class="btn" value="Update Cart" /></li>
+					<li><input type="submit" name="delete" id="empty-cart"
+						class="btn" value="Empty Cart" /></li>
+					<li><input type="button" name="button"
+						value="Continue Shopping" onclick="location.href='buy.html'"
+						style="display: inline"></li>
+					<li><input type="button" name="button" value="Go To Checkout"
+						onclick="location.href='checkout.html'" style="display: inline">
+					</li>
+				</ul>
+				</form>
+			</div>
+
+		</div>
+	</div>
+
+</body>
+</html>
