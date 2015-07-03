@@ -326,7 +326,10 @@ body#checkout-page #site-info {
 	padding-bottom: 0.3em;
 	border-bottom: 1px solid #ddd;
 }
-
+#cancel-btn{
+	background-color: #b9b8aa;
+	float: right
+}
 #paypal-form {
 	margin: 1.5em 0;
 }

@@ -11,9 +11,9 @@
 <title>order</title>
 </head>
 <body id="checkout-page">
-	<body id="checkout-page">
+<body id="checkout-page">
 	<div id="site">
-		
+
 		<div id="content">
 			<h1>Your Order</h1>
 			<table id="checkout-cart" class="shopping-cart">
@@ -39,13 +39,23 @@
 				<h2>Your Data</h2>
 				<div id="user-details-content"></div>
 			</div>
-			<s:form id = "json-form" action="json">
-				<s:hidden name="json_product" id = "product"></s:hidden>
-				<s:hidden name="json_custT" id = "custT"></s:hidden>
-				<s:hidden name="json_custA" id = "custA"></s:hidden>
-				<input type="submit" id="paypal-btn" class="btn" value="Confirm" />
+			<script type="text/javascript">
+				function cancel() {
+					document.getElementById("field2").value = document
+							.getElementById("field1").value;
+				}
+			</script>
+			<s:form id="json-form" action="json">
+				<s:hidden name="json_product" id="product"></s:hidden>
+				<s:hidden name="json_custT" id="custT"></s:hidden>
+				<s:hidden name="json_custA" id="custA"></s:hidden>
+				<input type="submit" class="btn" value="Confirm" />
+				<a href="../cart.html"> <input type="button" class="btn" id = "cancel-btn"
+					value="Cancel" />
+				</a>
 			</s:form>
-			
+
+
 		</div>
 	</div>
 </body>

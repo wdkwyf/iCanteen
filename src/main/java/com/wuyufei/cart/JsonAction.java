@@ -16,7 +16,7 @@ public class JsonAction extends ActionSupport {
 	private String json_custA;
 	private ArrayList<Order> orderList;
 	private Order_DAO dao = new Order_DAO();
-
+	private EmailerAction emailer = new EmailerAction();
 	@Override
 	public String execute() throws Exception {
 		JSONObject jsonObjSplit = new JSONObject(json_product);
@@ -49,6 +49,8 @@ public class JsonAction extends ActionSupport {
 					.getPrice(), orderList.get(i).getQty(), "wuyufei",
 					json_custT, json_custA);
 		}
+		//send a email to bussiness
+		//emailer.setTo(to);
 		return "success";
 	}
 
