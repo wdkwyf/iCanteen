@@ -3,20 +3,26 @@ package com.wuyufei.cart;
 import java.awt.image.RescaleOp;
 import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
 
 import com.opensymphony.xwork2.ActionSupport;
 import com.wuyufei.dao.Order_DAO;
+import com.wuyufei.dao.User_DAO;
+import com.wuyufei.domain.OrderList;
+import com.wuyufei.domain.Userinfo;
 
 public class JsonAction extends ActionSupport {
 	private String json_product;
 	private String json_custT;
 	private String json_custA;
+	private String username = "wuyufei";
 	private ArrayList<Order> orderList;
 	private Order_DAO dao = new Order_DAO();
 	private EmailerAction emailer = new EmailerAction();
+
 	@Override
 	public String execute() throws Exception {
 		JSONObject jsonObjSplit = new JSONObject(json_product);
@@ -46,11 +52,31 @@ public class JsonAction extends ActionSupport {
 		}
 		for (int i = 0; i < orderList.size(); i++) {
 			dao.insert(orderList.get(i).getProduct(), orderList.get(i)
-					.getPrice(), orderList.get(i).getQty(), "wuyufei",
+					.getPrice(), orderList.get(i).getQty(), username,
 					json_custT, json_custA);
 		}
-		//send a email to bussiness
-		//emailer.setTo(to);
+		// send a email to business
+		String to = new User_DAO().getUserinfoByUsername(username).getEmail();
+		List<OrderList> ol = (new Order_DAO()).getOrderByUsername(username);
+		for (int i = 0; i < ol.size(); i++) {
+			System.out.println("----  " + ol.get(i).getAddress());
+		}
+		emailer.setTo(to);
+		emailer.setSubject("You have receive a new order —— iCanteen");
+		String body = "Dear " + username + ":\n";
+		int count = ol.size();
+		body += "You have receive " + count + " order(s) as followings:\n\n";
+		for (OrderList orderItem : ol) {
+			body += "Order" + orderItem.getOrderId() + ":\t"
+					+ orderItem.getAddress() + "\t" + orderItem.getTelephone()
+					+ "\t" + orderItem.getQty() + "\t"
+					+ orderItem.getProductName() + "\nDate:\t"+orderItem.getInserttime()+"\n-------------------------------------\n";
+		}
+		body += "\n";
+		body += "Please respond these orders as soon as possible.\n\n\n";
+		body += "Yours sincerely,\niCanteen";
+		emailer.setBody(body);
+		emailer.execute();
 		return "success";
 	}
 
