@@ -20,88 +20,24 @@ a{text-decoration:none;}
 Style
 */
 body{
-	background:#E3EEF2;
-}
-.wrap{
-	width:1000px;
-	padding-left:8%;
-	margin:0 auto;
-	font-size:12px;
-	font-family: Arial, Helvetica, sans-serif;
+	
+		background-image:url(../images/bgmohu.jpg);
+
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+	
+
 }
 
-.user-desc {
-	background: #2a2b2c;
-	padding:0.5em 0;
+#bg{
+	margin:none;
+	background-image:url(../images/bgmohu.jpg);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+	padding-top: 10px;
 }
-.user-desc ul li a {
-	color: #BB9494;
-	font-size: 16px;
-	font-family: 'Source Sans Pro', sans-serif;
-	text-decoration: none;
-	font-weight: 400;
-}
-.user-desc ul {
-	float:right;
-}
-.user-desc ul li {
-	display: inline-block;
-	margin: 0 5px;
-}
-i.user{
-	width:25px;
-	height:25px;
-	background:url('../images/img-sprite.png') no-repeat 0px 0px;
-	display:inline-block;
-	vertical-align: middle;
-}
-i.cart{
-	width: 30px;
-	height: 30px;
-	background: url('../images/img-sprite.png') no-repeat -25px 0px;
-	display: inline-block;
-	vertical-align: middle;
-}
-.sales-head h3 {
-	color: #434343;
-	font-weight: 200;
-	font-size: 3.5em;
-	margin-bottom: 1em;
-}
-.sales-head h3 span{
-	background:#39c4da;
-	color:#fff;
-	padding:0 8px;
-}
-.header {
-	background: #35c3d9;
-}
-.logo {
-	float: left;
-}
-.logo img {
-	box-shadow: 9px 7px 22px 0px rgba(50, 50, 50, 0.18);
-	width: 100%;
-}
-.top-menu ul li {
-	display: inline-block;
-	margin: 0 15px;
-}
-.top-menu ul li a{
-	color:#000000;
-	font-size:18px;
-	font-weight:400;
-	font-family: 'Source Sans Pro', sans-serif;
-	text-decoration:none;
-}
-.top-menu ul li a.active {
-	color: #000000;
-}
-.top-menu {
-	float: right;
-	padding: 2.8em;
-	box-shadow: 9px 7px 22px 0px rgba(50, 50, 50, 0.18);
-}
+
 
 ----------------------------
 
@@ -126,19 +62,18 @@ i.cart{
 	color:#00a99d;
 }
 .content{
-	background:transparent;
+	margin-left: 13%;
+	padding-top: 10px;
 	color:#464646;
-	float:left;
-	border-right:1px solid #eee;
-	border-left:1px solid #eee;
+	border-right:0.5px solid #eee;
+	border-left:0.5px solid #eee;
 	-moz-box-shadow:0 0 5px #eee;
-	-webkit-box-shadow:0 0 5px #eee;
 	box-shadow:0 0 5px #eee;
-	width:760px;
+	width:960px;
 }
 .part h2,
 .part h1{
-	padding:0 0 5px 0;
+	padding:0 0 10px 0;
 	font-weight:bold;
 	font-size:16px;
 	border-bottom:1px solid #2d2d2d;
@@ -150,30 +85,50 @@ i.cart{
 .part h1 a{
 	color:#2d2d2d;
 }
+
+
+
 .part{
+
 	padding:20px 0 0 20px;
 }
 .grid{
-	width:128px;
-	padding:0 20px 20px 0;
+
+	width:170px;
+	margin-right: 5px;
+	margin-left: 5px;
+	margin-bottom: 10px;
+	padding:0 0px 10px 0px;
 	float:left;
+	border:1px solid lightgray;
 }
 .grid h3{
 	color:#464646;
 	line-height:1.6em;
-	font-size:12px;
+	font-size:16px;
 	/*height:20px;*/
 	overflow:hidden;
-	margin:5px 0;
+	margin-left:5px;
 }
 .grid h3 a{
 	color:#0d6e9b;
 }
+.grid h5{
+	color:#464646;
+	line-height:1.6em;
+	font-weight: bold;
+	font-size:22px;
+	/*height:20px;*/
+	overflow:hidden;
+	margin-left: 5px;
+}
+
 .grid .preview{
+
 	position:relative;
 }
 .grid .preview img{
-	width:128px;
+	width:100%;
 	max-width:100%;
 	display:block;
 }
@@ -190,6 +145,12 @@ i.cart{
 	-webkit-border-top-left-radius:.5em;
 	border-top-left-radius:.5em;
 }
+.data{
+
+	border-top: 1px solid lightgray;
+
+}
+
 .grid .data div{
 	padding:5px 0 0 0;
 }
@@ -247,63 +208,15 @@ i.cart{
 	vertical-align:middle;
 }
 /* sidebar */
-.sidebar{
-	width:220px;
-	float:left;
-	font-size:12px;
-	padding:0 18px 0 0;
-}
-	.widget{
-		font-size:12px;
-		margin:0 0 18px 0;
-		background: #ffffff;
-		overflow:hidden;
-	}
-	.widget ul{
-		font-size: 12px;
-		list-style:none;
-		margin:0;
-		padding:0;
-	}
-	.widget li{
-		border-top:1px solid #ddd;
-		margin:0;
-		padding:0;
-	}
-	.widget li.active a:before{
-		content:"";
-		position:absolute;
-		top:13px;
-		left:0px;
-		z-index:2;
-		width:8px;
-		height:8px;
-		background:url(../images/index/rt-arrow.png) no-repeat;
-	}
-	.widget li:last-child{
-		border-bottom:1px solid #2d2d2d;
-	}
-	.widget li:first-child{
-		border-top:1px solid #2d2d2d;
-	}
-	.widget a{
-		position:relative;
-		display:block;
-		line-height:1.6em;
-		color:#7d7d7d;
-		padding:8px 10px;
-	}
-	.widget a:hover,
-	.widget li.active a{
-		color:#0d6e9b;
-	}
+
 .search-box{
 	background:#fff;
+	margin-left: 40px;
 	border:1px solid #ddd;
 	-moz-border-radius:2em;
 	-webkit-border-radius:2em;
 	border-radius:2em;
-	margin:0 0 18px 0;
+	opacity:0.3;
 }
 .search-box:hover{
 	background:#fff;

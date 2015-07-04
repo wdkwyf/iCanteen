@@ -1,15 +1,14 @@
+<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@page import="com.wuyufei.domain.HotNews"%>
+<%@page import="com.wuyufei.domain.Bussiness" %>
 <%@page import="java.util.ArrayList"%>
 <%@taglib uri="/struts-tags" prefix="s"%>
-<%
-	request
-		.getAttribute("javax.servlet.forward.request_uri");
-%>
-<%-- <s:action name="doReady" executeResult="success"></s:action> --%>
+
 <%
 	ArrayList<HotNews> list= (ArrayList<HotNews>)request.getAttribute("url");
+	List<Bussiness> bl = (List<Bussiness>)request.getAttribute("bs");
 	System.out.println(list.get(0).getUrl());
 %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -18,7 +17,12 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>爱食堂</title>
 <link rel="stylesheet" type="text/css" href="css/style.css">
-
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/shop.js"></script>
+<link rel="stylesheet" type="text/css" href="css/cartStyle.css">
+<link href="css/checkoutbts.css" rel="stylesheet" type="text/css"
+	media="all" />
+<link href="css/checkout.css" rel="stylesheet" type="text/css">
 <script src="js/jquery-2.1.4.min.js"></script>
 <script src="js/slides.min.jquery.js"></script>
 <script>
@@ -38,83 +42,72 @@
 	<div class="user-desc">
 		<div class="container">
 			<ul>
-				<li><a href="jsp/Login.jsp">Login</a></li>
+				<%
+					String str = (String)session.getAttribute("username");
+				%>
+				<%
+					if(str == "Login"){
+				%>
+				<li><a href="jsp/Login.jsp"><%=str%></a></li>
+				<%} %>
+				<%if(str != "Login"){ %>
+				<li><a href="jsp/Welcome.jsp"><%=str%></a></li>
+				<%} %>
 				<li><a href="jsp/Reg.jsp">Register</a></li>
 				<li><a href="checkout.html">Checkout</a></li>
-				<li><i class="user"></i><a href="#">My Account</a></li>
 				<li><i class="cart"></i><a href="../cart.html">Cart </a></li>
+				<%if(str != "Login"){out.println("<li><a href=\"jsp/logout.jsp\">Logout</a></li>");} %>
 			</ul>
 		</div>
 	</div>
-
-	<div class="wrap">
-		<div class="sidebar">
-			<header>
-			<div class="logo">
-				<a href="index.html" title="Mad"> </a>
+	<div class="header">
+		<div class="header-top">
+			<div class="container">
+				<div class="logo">
+					<a href="#"><img src="images/index/foodLogo.png" alt="" /></a>
+				</div>
+				<div class="top-menu">
+					<ul class="cl-effect-15">
+						<li><a href="#" data-hover="HOME">HOME</a></li>
+						<li class="nav_menu-item"><a href="#" data-hover="CONTACT">CONTACT</a>
+							<ul class="nav_submenu">
+								<li class="nav_submenu-item">wu</li>
+								<li class="nav_submenu-item">1111111</li>
+								<li class="nav_submenu-item">feng</li>
+								<li class="nav_submenu-item">1111111</li>
+								<li class="nav_submenu-item">huang</li>
+								<li class="nav_submenu-item">1111111</li>
+							</ul></li>
+						<li>
+							<div class="search-box">
+								<form action="#">
+									<input type="text"> <input type="submit" value="">
+								</form>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<div class="clearfix"></div>
 			</div>
-			<div class="clearFloat"></div>
-			<div class="search-box">
-				<form action="#">
-					<input type="text"> <input type="submit" value="">
-				</form>
-			</div>
-			<div class="clearFloat"></div>
-			</header>
-			<div class="widget">
-				<h1>推荐菜单</h1>
-				<ul>
-					<li><a href="#">1</a></li>
-					<li><a href="#">2</a></li>
-					<li class="active"><a href="#">3</a></li>
-					<li><a href="#">4</a></li>
-					<li><a href="#">5</a></li>
-					<li><a href="#">6</a></li>
-					<li><a href="#">7</a></li>
-					<li><a href="#">8</a></li>
-					<li><a href="#">9</a></li>
-					<li><a href="#">10</a></li>
-				</ul>
-				<h2>今日最热</h2>
-				<ul>
-					<li><a href="#">1</a></li>
-					<li><a href="#">2</a></li>
-					<li><a href="#">3</a></li>
-					<li><a href="#">4</a></li>
-					<li><a href="#">5</a></li>
-					<li><a href="#">6</a></li>
-					<li><a href="#">7</a></li>
-					<li><a href="#">8</a></li>
-					<li><a href="#">9</a></li>
-					<li><a href="#">10</a></li>
-
-				</ul>
-			</div>
-			<div class="clearFloat"></div>
 		</div>
-		<!--cut off-->
+	</div>
+	<div id=bg>
 		<div class="content">
-			<div>顶部菜单栏</div>
 			<div id="example">
 				<div id="slides">
 					<div class="slides_container">
 						<a href="" title="123" target="_blank"><img
-							src=<%=list.get(0).getUrl()%> width="570" height="270"
+							src=<%=list.get(0).getUrl()%> width="1000" height="340"
 							alt="Slide 1"> </a> <a href="#" title="123" target="_blank"><img
-							src=<%=list.get(1).getUrl()%> width="570" height="270"
+							src=<%=list.get(1).getUrl()%> width="1000" height="340"
 							alt="Slide 2"> </a> <a href="" title="123" target="_blank"><img
-							src=<%=list.get(2).getUrl()%> width="570" height="270"
+							src=<%=list.get(2).getUrl()%> width="1000" height="340"
 							alt="Slide 3"> </a> <a href="" title="123" target="_blank"><img
-							src=<%=list.get(3).getUrl()%> width="570" height="270"
+							src=<%=list.get(3).getUrl()%> width="1000" height="340"
 							alt="Slide 4"> </a>
 					</div>
-					<a href="#" class="prev"><img src="images/index/arrow-prev.png"
-						width="24" height="43" alt="Arrow Prev"></a> <a href="#"
-						class="next"><img src="images/index/arrow-next.png" width="24"
-						height="43" alt="Arrow Next"></a>
 				</div>
-				<img src="images/index/example-frame.png" width="739" height="341"
-					alt="Example Frame" id="frame">
+
 			</div>
 
 
@@ -123,74 +116,18 @@
 				<h2>
 					名店推介 <a href="">more &raquo;</a>
 				</h2>
-				<div class="grid">
+				<div class="grid" onclick="location.href='buy.html'">
 					<div class="preview">
 						<a href="" title=""><img src="images/index/food.png" alt="#"></a>
 
 					</div>
 					<div class="data">
-						<h3>
-							<a href="buy.html">点击进入本店</a>
-						</h3>
-						<div class="category">
-							<span class="icon"></span> <a href="#">联系店主</a>
-						</div>
-					</div>
-				</div>
-				<div class="grid">
-					<div class="preview">
-						<a href="" title=""><img src="images/index/food.png" alt="#"></a>
+						<h5>
+							<a href="">name</a>
+						</h5>
+						<h3>fare / area</h3>
+						<h3>time</h3>
 
-					</div>
-					<div class="data">
-						<h3>
-							<a href="">点击进入本店</a>
-						</h3>
-						<div class="category">
-							<span class="icon"></span> <a href="#">联系店主</a>
-						</div>
-					</div>
-				</div>
-				<div class="grid">
-					<div class="preview">
-						<a href="" title=""><img src="images/index/food.png" alt="#"></a>
-
-					</div>
-					<div class="data">
-						<h3>
-							<a href="">点击进入本店</a>
-						</h3>
-						<div class="category">
-							<span class="icon"></span> <a href="#">联系店主</a>
-						</div>
-					</div>
-				</div>
-				<div class="grid">
-					<div class="preview">
-						<a href="" title=""><img src="images/index/food.png" alt="#"></a>
-
-					</div>
-					<div class="data">
-						<h3>
-							<a href="">点击进入本店</a>
-						</h3>
-						<div class="category">
-							<span class="icon"></span> <a href="#">联系店主</a>
-						</div>
-					</div>
-				</div>
-				<div class="grid">
-					<div class="preview">
-						<a href="" title=""><img src="images/index/food.png" alt="#"></a>
-
-					</div>
-					<div class="data">
-						<h3>
-							<a href="">点击进入本店</a>
-						</h3>
-						<div class="category">
-							<span class="icon"></span> <a href="#">联系店主</a>
-						</div>
 					</div>
 				</div>
 				<div class="clearFloat"></div>
@@ -423,7 +360,7 @@
 
 			</footer>
 		</div>
-		<div class="clearFloat"></div>
 	</div>
+	<div class="clearFloat"></div>
 </body>
 </html>

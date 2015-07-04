@@ -72,6 +72,7 @@ i.cart{
 	display: inline-block;
 	vertical-align: middle;
 }
+
 .sales-head h3 {
 	color: #434343;
 	font-weight: 200;
@@ -84,10 +85,16 @@ i.cart{
 	padding:0 8px;
 }
 .header {
-	background: #E02929;
+		background-image:url(../images/index/bground.png);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
 }
 .logo {
 	float: left;
+		padding: 0px;
+
 }
 .logo img {
 	box-shadow: 9px 7px 22px 0px rgba(50, 50, 50, 0.18);
@@ -105,14 +112,48 @@ i.cart{
 	text-decoration:none;
 }
 .top-menu ul li a.active {
-	color: #000000;
+	color: #fff;
 }
 .top-menu {
 	float: right;
 	padding: 2.8em;
 	box-shadow: 9px 7px 22px 0px rgba(50, 50, 50, 0.18);
 }
+.nav_menu-item {
+
+  display: inline-block;
+  position: relative;
+}
+.nav_menu-item:hover {
+  
+}
+.nav_menu-item:hover .nav_submenu {
+
+  display: block;
+}
+.nav_submenu {
+  background-color:transparent;
+  font-weight:400;
+  font-family: 'Source Sans Pro', sans-serif;
+  padding:none;
+  margin:none;
+  color: #fff;
+  font-size: 14px;
+  text-transform: none;
+  display: none;
+  position: absolute;
+  width: 100px;
+ 
+}
+
+
+
+
 /* Effect 15: scale down, reveal */
+.cl-effect-15{
+	padding-right: 40px;
+}
+
 .cl-effect-15 a {
 	color: rgba(0,0,0,0.2);
 	font-weight: 700;
