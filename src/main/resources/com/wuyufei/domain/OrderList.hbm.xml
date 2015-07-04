@@ -1,36 +1,33 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
-<!-- Generated 2015-7-3 16:21:48 by Hibernate Tools 3.4.0.CR1 -->
+<!-- Generated 2015-7-4 15:27:38 by Hibernate Tools 3.4.0.CR1 -->
 <hibernate-mapping>
-	<class name="com.wuyufei.domain.OrderList" table="orderList"
-		catalog="db">
-		<id name="orderId" type="java.lang.Integer">
-			<column name="orderId" />
-			<generator class="identity" />
-		</id>
-		<many-to-one name="userinfo" class="com.wuyufei.domain.Userinfo"
-			fetch="select">
-			<column name="username" length="10" not-null="true" />
-		</many-to-one>
-		<property name="productName" type="string">
-			<column name="productName" length="45" not-null="true" />
-		</property>
-		<property name="price" type="int">
-			<column name="price" not-null="true" />
-		</property>
-		<property name="qty" type="int">
-			<column name="qty" not-null="true" />
-		</property>
-		<property name="telephone" type="string">
-			<column name="telephone" length="45" not-null="true" />
-		</property>
-		<property name="address" type="string">
-			<column name="address" length="45" not-null="true" />
-		</property>
-		<property name="inserttime" type="timestamp">
-			<column name="inserttime" length="19" not-null="true" />
-		</property>
-	</class>
-	
+    <class name="com.wuyufei.domain.OrderList" table="orderList" catalog="db">
+        <id name="orderId" type="java.lang.Integer">
+            <column name="orderId" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="userinfo" class="com.wuyufei.domain.Userinfo" fetch="select">
+            <column name="username" length="10" not-null="true" />
+        </many-to-one>
+        <property name="productName" type="string">
+            <column name="productName" length="45" not-null="true" />
+        </property>
+        <property name="price" type="int">
+            <column name="price" not-null="true" />
+        </property>
+        <property name="qty" type="int">
+            <column name="qty" not-null="true" />
+        </property>
+        <property name="telephone" type="string">
+            <column name="telephone" length="45" not-null="true" />
+        </property>
+        <property name="address" type="string">
+            <column name="address" length="45" not-null="true" />
+        </property>
+        <property name="inserttime" type="timestamp">
+            <column name="inserttime" length="19" not-null="true" />
+        </property>
+    </class>
 </hibernate-mapping>

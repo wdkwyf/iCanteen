@@ -1,5 +1,7 @@
 package com.wuyufei.login;
 
+import javax.servlet.RequestDispatcher;
+
 import com.opensymphony.xwork2.ActionSupport;
 import com.wuyufei.dao.User_DAO;
 
@@ -13,6 +15,7 @@ public class LoginAction extends ActionSupport {
 	}
 	public String execute(){
 		if(dao.authenticate(getUsername(),getPassword())){
+
 			return "success";
 		}
 		else{

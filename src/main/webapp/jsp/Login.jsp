@@ -9,17 +9,7 @@
 <link href="../css/style_login.css" rel='stylesheet' type='text/css' />
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script type="application/x-javascript">
-	
-	
-	
-	
-	
 	 addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); }
-
-
-
-
-
 </script>
 <style type="text/css">
 input:-webkit-autofill {
@@ -40,7 +30,7 @@ input:-webkit-autofill {
 				<input type="text" class="text" name="username"
 					placeholder="Input Your Username" onfocus="this.value = '';"
 					onblur="if (this.value == '') {this.value = '';}">
-				
+
 
 				<input type="password" value="" name="password"
 					onfocus="this.value = '';"

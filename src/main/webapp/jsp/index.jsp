@@ -2,8 +2,15 @@
 	pageEncoding="UTF-8"%>
 <%@page import="com.wuyufei.domain.HotNews"%>
 <%@page import="java.util.ArrayList"%>
+<%@taglib uri="/struts-tags" prefix="s"%>
+<%
+	request
+		.getAttribute("javax.servlet.forward.request_uri");
+%>
+<%-- <s:action name="doReady" executeResult="success"></s:action> --%>
 <%
 	ArrayList<HotNews> list= (ArrayList<HotNews>)request.getAttribute("url");
+	System.out.println(list.get(0).getUrl());
 %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -31,14 +38,14 @@
 	<div class="user-desc">
 		<div class="container">
 			<ul>
-			<li><a href="jsp/Login.jsp">Login</a></li>			
-		    <li><a href="jsp/Reg.jsp">Register</a></li>
-			<li><a href="checkout.html">Checkout</a></li>
-			<li><i class="user"></i><a href="#">My Account</a></li>
-			<li><i class="cart"></i><a href="../cart.html">Cart </a></li>
+				<li><a href="jsp/Login.jsp">Login</a></li>
+				<li><a href="jsp/Reg.jsp">Register</a></li>
+				<li><a href="checkout.html">Checkout</a></li>
+				<li><i class="user"></i><a href="#">My Account</a></li>
+				<li><i class="cart"></i><a href="../cart.html">Cart </a></li>
 			</ul>
 		</div>
-</div>
+	</div>
 
 	<div class="wrap">
 		<div class="sidebar">
@@ -99,8 +106,7 @@
 							src=<%=list.get(2).getUrl()%> width="570" height="270"
 							alt="Slide 3"> </a> <a href="" title="123" target="_blank"><img
 							src=<%=list.get(3).getUrl()%> width="570" height="270"
-							alt="Slide 4">
-						</a>
+							alt="Slide 4"> </a>
 					</div>
 					<a href="#" class="prev"><img src="images/index/arrow-prev.png"
 						width="24" height="43" alt="Arrow Prev"></a> <a href="#"
@@ -110,7 +116,7 @@
 				<img src="images/index/example-frame.png" width="739" height="341"
 					alt="Example Frame" id="frame">
 			</div>
-			
+
 
 			<div class="clearFloat"></div>
 			<div class="part">
