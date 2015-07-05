@@ -19,13 +19,13 @@ public class DoReadyAction extends ActionSupport{
 
 	private static Session session;
 	public List<HotNews> s = new ArrayList<HotNews>();
-	
+	public List<Bussiness> bs = new ArrayList<Bussiness>();
 	public String execute() throws Exception {
 		session = HibernateUtil.getSessionFactory().openSession();
 
 		String hql = "FROM HotNews AS h ORDER BY h.id DESC";
 		List<HotNews> hn = new ArrayList<HotNews>();
-		List<Bussiness> bs = new business_DAO().showByMode(0);
+		bs = new business_DAO().showByMode(0);
 		hn = session.createQuery(hql).list();
 		// System.out.println(hn.get(0).getUrl());
 		if (hn.size() != 0) {
@@ -41,11 +41,18 @@ public class DoReadyAction extends ActionSupport{
 		if(username == null){
 			mySession.setAttribute("username", "Login");
 		}
-		System.out.println(bs.get(0).getArea());
 		
 		request.setAttribute("url", s);
 		request.setAttribute("business",bs);
 		return "success";
+	}
+
+	public List<Bussiness> getBs() {
+		return bs;
+	}
+
+	public void setBs(List<Bussiness> bs) {
+		this.bs = bs;
 	}
 
 	public List<HotNews> getS() {

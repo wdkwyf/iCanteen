@@ -103,7 +103,7 @@ body{
 	border:1px solid lightgray;
 }
 .grid h3{
-	color:#464646;
+	color:#c7c7c7;
 	line-height:1.6em;
 	font-size:16px;
 	/*height:20px;*/
@@ -114,7 +114,7 @@ body{
 	color:#0d6e9b;
 }
 .grid h5{
-	color:#464646;
+	color:#fff;
 	line-height:1.6em;
 	font-weight: bold;
 	font-size:22px;

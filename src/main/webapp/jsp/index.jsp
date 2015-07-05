@@ -2,14 +2,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@page import="com.wuyufei.domain.HotNews"%>
-<%@page import="com.wuyufei.domain.Bussiness" %>
+<%@page import="com.wuyufei.domain.Bussiness"%>
 <%@page import="java.util.ArrayList"%>
 <%@taglib uri="/struts-tags" prefix="s"%>
 
 <%
 	ArrayList<HotNews> list= (ArrayList<HotNews>)request.getAttribute("url");
-	List<Bussiness> bl = (List<Bussiness>)request.getAttribute("bs");
-	System.out.println(list.get(0).getUrl());
+	ArrayList<Bussiness> bl = (ArrayList<Bussiness>)request.getAttribute("bs");
 %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -26,6 +25,11 @@
 <script src="js/jquery-2.1.4.min.js"></script>
 <script src="js/slides.min.jquery.js"></script>
 <script>
+	function myFunction(id) {
+		var bid = id;
+
+		alert(bid);
+	}
 	$(function() {
 		$('#slides').slides({
 			preload : true,
@@ -43,20 +47,30 @@
 		<div class="container">
 			<ul>
 				<%
-					String str = (String)session.getAttribute("username");
+					String str = (String) session.getAttribute("username");
 				%>
 				<%
-					if(str == "Login"){
+					if (str == "Login") {
 				%>
 				<li><a href="jsp/Login.jsp"><%=str%></a></li>
-				<%} %>
-				<%if(str != "Login"){ %>
+				<%
+					}
+				%>
+				<%
+					if (str != "Login") {
+				%>
 				<li><a href="jsp/Welcome.jsp"><%=str%></a></li>
-				<%} %>
+				<%
+					}
+				%>
 				<li><a href="jsp/Reg.jsp">Register</a></li>
 				<li><a href="checkout.html">Checkout</a></li>
 				<li><i class="cart"></i><a href="../cart.html">Cart </a></li>
-				<%if(str != "Login"){out.println("<li><a href=\"jsp/logout.jsp\">Logout</a></li>");} %>
+				<%
+					if (str != "Login") {
+																						out.println("<li><a href=\"jsp/logout.jsp\">Logout</a></li>");
+																					}
+				%>
 			</ul>
 		</div>
 	</div>
@@ -116,6 +130,67 @@
 				<h2>
 					名店推介 <a href="">more &raquo;</a>
 				</h2>
+				<%
+					int len = 2;
+							for (int i = 0; i < len; i++) {
+							Bussiness bi = bl.get(i);  //need to get	
+							String s = bi.getUsername();
+				%>
+				<div class="grid" id="shops">
+					<div class="preview">
+						<a href="" title=""><img src="images/index/food.png" alt="#"></a>
+					</div>
+					<div class="data">
+						<h5>
+							<div id="shopname"><%=s%></div>
+						</h5>
+						<h3><%=bi.getArea()%>
+							/
+							$<%=bi.getFare()%></h3>
+						<h3>Time: <%=bi.getTime()%> mins</h3>
+					</div>
+					<s:form action="buy">
+						<s:hidden name="bid" id="ShopName"></s:hidden>
+						<input type="submit"></input>
+					</s:form>
+				</div>
+				<%
+					}
+				%>
+				<div class="clearFloat"></div>
+				<h2>
+					所有店面 <a href="">more &raquo;</a>
+				</h2>
+				<%
+					int len2 = 2;
+							for (int i = 0; i < len2; i++) {
+							Bussiness bi = bl.get(i);
+							String s = bi.getUsername();
+				%>
+				<div class="grid" id="shops">
+					<div class="preview">
+						<a href="" title=""><img src="images/index/food.png" alt="#"></a>
+					</div>
+					<div class="data">
+						<h5>
+							<a href="">name</a>
+						</h5>
+						<h3><%=bi.getArea()%>
+							/
+							<%=bi.getFare()%></h3>
+						<h3><%=bi.getTime()%></h3>
+					</div>
+					<div id="shopname"><%=s%></div>
+					<s:form action="buy">
+						<s:hidden name="bid" id="ShopName"></s:hidden>
+						<input type="submit"></input>
+					</s:form>
+				</div>
+				<%
+					}
+				%>
+
+
 				<div class="grid" onclick="location.href='buy.html'">
 					<div class="preview">
 						<a href="" title=""><img src="images/index/food.png" alt="#"></a>
@@ -125,86 +200,15 @@
 						<h5>
 							<a href="">name</a>
 						</h5>
+
 						<h3>fare / area</h3>
 						<h3>time</h3>
 
 					</div>
 				</div>
-				<div class="clearFloat"></div>
-				<div class="grid">
-					<div class="preview">
-						<a href="" title=""><img src="images/index/food.png" alt="#"></a>
 
-					</div>
-					<div class="data">
-						<h3>
-							<a href="">点击进入本店</a>
-						</h3>
-						<div class="category">
-							<span class="icon"></span> <a href="#">联系店主</a>
-						</div>
-					</div>
-				</div>
-				<div class="grid">
-					<div class="preview">
-						<a href="" title=""><img src="images/index/food.png" alt="#"></a>
 
-					</div>
-					<div class="data">
-						<h3>
-							<a href="">点击进入本店</a>
-						</h3>
-						<div class="category">
-							<span class="icon"></span> <a href="#">联系店主</a>
-						</div>
-					</div>
-				</div>
-				<div class="grid">
-					<div class="preview">
-						<a href="" title=""><img src="images/index/food.png" alt="#"></a>
 
-					</div>
-					<div class="data">
-						<h3>
-							<a href="">点击进入本店</a>
-						</h3>
-						<div class="category">
-							<span class="icon"></span> <a href="#">联系店主</a>
-						</div>
-					</div>
-				</div>
-				<div class="grid">
-					<div class="preview">
-						<a href="" title=""><img src="images/index/food.png" alt="#"></a>
-
-					</div>
-					<div class="data">
-						<h3>
-							<a href="">点击进入本店</a>
-						</h3>
-						<div class="category">
-							<span class="icon"></span> <a href="#">联系店主</a>
-						</div>
-					</div>
-				</div>
-				<div class="grid">
-					<div class="preview">
-						<a href="" title=""><img src="images/index/food.png" alt="#"></a>
-
-					</div>
-					<div class="data">
-						<h3>
-							<a href="">点击进入本店</a>
-						</h3>
-						<div class="category">
-							<span class="icon"></span> <a href="#">联系店主</a>
-						</div>
-					</div>
-				</div>
-				<div class="clearFloat"></div>
-				<h2>
-					周边名店 <a href="">more &raquo;</a>
-				</h2>
 				<div class="grid">
 					<div class="preview">
 						<a href="" title=""><img src="images/index/food.png" alt="#"></a>
@@ -350,17 +354,31 @@
 			</div>
 
 			<div class="clearFloat"></div>
-			<footer>
-			<div class="about">
-				<div class="title">About Us</div>
 
-			</div>
-
-			<div class="clearFloat"></div>
-
-			</footer>
 		</div>
 	</div>
 	<div class="clearFloat"></div>
+	<script type="text/javascript">
+		$("#shops").each(function() {
+			var len = 2;
+			/* for(var i=0;i<len;i++ ) {
+				var name = "shopname"+i;
+				console.log(document.getElementById(name).innerHTML);
+				var temp = document.getElementById("ShopName");
+				temp.value = document.getElementById(name).innerHTML;
+				temp.id = "complete";
+				
+			} */
+			while (document.getElementById("shopname")) {
+				console.log(document.getElementById("shopname").innerHTML);
+				var temp = document.getElementById("ShopName");
+				var getSName = document.getElementById("shopname");
+				temp.value = getSName.innerHTML;
+				temp.id = "complete";
+				getSName.id = "alsocomplete";
+
+			}
+		});
+	</script>
 </body>
 </html>

@@ -27,6 +27,9 @@
 		<action name="doReady" class="com.wuyufei.domain.DoReadyAction">
 			<result name="success">/jsp/index.jsp</result>
 		</action>
+		<action name="buy" class="com.wuyufei.business.BuyAction">
+			<result name="success">buy.html</result>
+		</action>
 	</package>
 
 </struts>
