@@ -1,5 +1,5 @@
 package com.wuyufei.domain;
-// Generated 2015-7-4 15:27:37 by Hibernate Tools 3.4.0.CR1
+// Generated 2015-7-6 15:02:17 by Hibernate Tools 3.4.0.CR1
 
 import java.util.Date;
 

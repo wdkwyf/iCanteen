@@ -64,13 +64,13 @@
 					}
 				%>
 				<li><a href="jsp/Reg.jsp">Register</a></li>
-				<li><a href="checkout.html">Checkout</a></li>
-				<li><i class="cart"></i><a href="../cart.html">Cart </a></li>
+				<li><a href="jsp/checkout.jsp">Checkout</a></li>
+				<li><i class="cart"></i><a href="jsp/cart.jsp">Cart </a></li>
 				<%
-					if (str != "Login") {
-																						out.println("<li><a href=\"jsp/logout.jsp\">Logout</a></li>");
-																					}
+					if (str != "Login"){ 
 				%>
+				<li><a href="jsp/logout.jsp">Logout</a></li>
+				<%} %>
 			</ul>
 		</div>
 	</div>
@@ -82,15 +82,12 @@
 				</div>
 				<div class="top-menu">
 					<ul class="cl-effect-15">
-						<li><a href="#" data-hover="HOME">HOME</a></li>
+						<li><a href="doReady" data-hover="HOME">HOME</a></li>
 						<li class="nav_menu-item"><a href="#" data-hover="CONTACT">CONTACT</a>
 							<ul class="nav_submenu">
-								<li class="nav_submenu-item">wu</li>
-								<li class="nav_submenu-item">1111111</li>
-								<li class="nav_submenu-item">feng</li>
-								<li class="nav_submenu-item">1111111</li>
-								<li class="nav_submenu-item">huang</li>
-								<li class="nav_submenu-item">1111111</li>
+								<li class="nav_submenu-item">Wu Yufei</li>
+								<li class="nav_submenu-item">Feng Xinhe</li>
+								<li class="nav_submenu-item">Huang Shuaiyi</li>
 							</ul></li>
 						<li>
 							<div class="search-box">
@@ -127,14 +124,12 @@
 
 			<div class="clearFloat"></div>
 			<div class="part">
-				<h2>
-					名店推介 <a href="">more &raquo;</a>
-				</h2>
+				<h2>&nbsp&nbspTop 5:</h2>
 				<%
-					int len = 2;
-							for (int i = 0; i < len; i++) {
-							Bussiness bi = bl.get(i);  //need to get	
-							String s = bi.getUsername();
+					int len = 5;
+													for (int i = 0; i < len; i++) {
+													Bussiness bi = bl.get(i);  //need to get	
+													String s = bi.getUsername();
 				%>
 				<div class="grid" id="shops">
 					<div class="preview">
@@ -145,27 +140,29 @@
 							<div id="shopname"><%=s%></div>
 						</h5>
 						<h3><%=bi.getArea()%>
-							/
-							$<%=bi.getFare()%></h3>
-						<h3>Time: <%=bi.getTime()%> mins</h3>
+							/ $<%=bi.getFare()%></h3>
+						<h3>
+							Time:
+							<%=bi.getTime()%>
+							mins
+						</h3>
 					</div>
 					<s:form action="buy">
 						<s:hidden name="bid" id="ShopName"></s:hidden>
-						<input type="submit"></input>
+						<input type="submit" class="btn" value="Go into"></input>
 					</s:form>
 				</div>
 				<%
 					}
 				%>
 				<div class="clearFloat"></div>
-				<h2>
-					所有店面 <a href="">more &raquo;</a>
-				</h2>
+
+				<h2>&nbsp&nbspAll Business:</h2>
 				<%
-					int len2 = 2;
-							for (int i = 0; i < len2; i++) {
-							Bussiness bi = bl.get(i);
-							String s = bi.getUsername();
+					int len2 = 6;
+													for (int i = 0; i < len2; i++) {
+													Bussiness bi = bl.get(i);
+													String s = bi.getUsername();
 				%>
 				<div class="grid" id="shops">
 					<div class="preview">
@@ -173,17 +170,19 @@
 					</div>
 					<div class="data">
 						<h5>
-							<a href="">name</a>
+							<div id="shopname"><%=s%></div>
 						</h5>
 						<h3><%=bi.getArea()%>
-							/
-							<%=bi.getFare()%></h3>
-						<h3><%=bi.getTime()%></h3>
+							/ $<%=bi.getFare()%></h3>
+						<h3>
+							Time:
+							<%=bi.getTime()%>
+							mins
+						</h3>
 					</div>
-					<div id="shopname"><%=s%></div>
 					<s:form action="buy">
 						<s:hidden name="bid" id="ShopName"></s:hidden>
-						<input type="submit"></input>
+						<input type="submit" class="btn" value="Go into"></input>
 					</s:form>
 				</div>
 				<%
@@ -191,168 +190,9 @@
 				%>
 
 
-				<div class="grid" onclick="location.href='buy.html'">
-					<div class="preview">
-						<a href="" title=""><img src="images/index/food.png" alt="#"></a>
-
-					</div>
-					<div class="data">
-						<h5>
-							<a href="">name</a>
-						</h5>
-
-						<h3>fare / area</h3>
-						<h3>time</h3>
-
-					</div>
-				</div>
-
-
-
-				<div class="grid">
-					<div class="preview">
-						<a href="" title=""><img src="images/index/food.png" alt="#"></a>
-
-					</div>
-					<div class="data">
-						<h3>
-							<a href="">点击进入本店</a>
-						</h3>
-						<div class="category">
-							<span class="icon"></span> <a href="#">联系店家</a>
-						</div>
-					</div>
-				</div>
-				<div class="grid">
-					<div class="preview">
-						<a href="" title=""><img src="images/index/food.png" alt="#"></a>
-
-					</div>
-					<div class="data">
-						<h3>
-							<a href="">点击进入本店</a>
-						</h3>
-						<div class="category">
-							<span class="icon"></span> <a href="#">联系店家</a>
-						</div>
-					</div>
-				</div>
-				<div class="grid">
-					<div class="preview">
-						<a href="" title=""><img src="images/index/food.png" alt="#"></a>
-
-					</div>
-					<div class="data">
-						<h3>
-							<a href="">点击进入本店</a>
-						</h3>
-						<div class="category">
-							<span class="icon"></span> <a href="#">联系店家</a>
-						</div>
-					</div>
-				</div>
-				<div class="grid">
-					<div class="preview">
-						<a href="" title=""><img src="images/index/food.png" alt="#"></a>
-
-					</div>
-					<div class="data">
-						<h3>
-							<a href="">点击进入本店</a>
-						</h3>
-						<div class="category">
-							<span class="icon"></span> <a href="#">联系店家</a>
-						</div>
-					</div>
-				</div>
-				<div class="grid">
-					<div class="preview">
-						<a href="" title=""><img src="images/index/food.png" alt="#"></a>
-
-					</div>
-					<div class="data">
-						<h3>
-							<a href="">点击进入本店</a>
-						</h3>
-						<div class="category">
-							<span class="icon"></span> <a href="#">联系店家</a>
-						</div>
-					</div>
-				</div>
-				<div class="clearFloat"></div>
-				<div class="grid">
-					<div class="preview">
-						<a href="" title=""><img src="images/index/food.png" alt="#"></a>
-
-					</div>
-					<div class="data">
-						<h3>
-							<a href="">点击进入本店</a>
-						</h3>
-						<div class="category">
-							<span class="icon"></span> <a href="#">联系店家</a>
-						</div>
-					</div>
-				</div>
-				<div class="grid">
-					<div class="preview">
-						<a href="" title=""><img src="images/index/food.png" alt="#"></a>
-
-					</div>
-					<div class="data">
-						<h3>
-							<a href="">点击进入本店</a>
-						</h3>
-						<div class="category">
-							<span class="icon"></span> <a href="#">联系店家</a>
-						</div>
-					</div>
-				</div>
-				<div class="grid">
-					<div class="preview">
-						<a href="" title=""><img src="images/index/food.png" alt="#"></a>
-
-					</div>
-					<div class="data">
-						<h3>
-							<a href="">点击进入本店</a>
-						</h3>
-						<div class="category">
-							<span class="icon"></span> <a href="#">联系店家</a>
-						</div>
-					</div>
-				</div>
-				<div class="grid">
-					<div class="preview">
-						<a href="" title=""><img src="images/index/food.png" alt="#"></a>
-
-					</div>
-					<div class="data">
-						<h3>
-							<a href="">点击进入本店</a>
-						</h3>
-						<div class="category">
-							<span class="icon"></span> <a href="#">联系店家</a>
-						</div>
-					</div>
-				</div>
-				<div class="grid">
-					<div class="preview">
-						<a href="" title=""><img src="images/index/food.png" alt="#"></a>
-
-					</div>
-					<div class="data">
-						<h3>
-							<a href="">点击进入本店</a>
-						</h3>
-						<div class="category">
-							<span class="icon"></span> <a href="#">联系店家</a>
-						</div>
-					</div>
-				</div>
 				<div class="clearFloat"></div>
 			</div>
-
+			<footer> <h3><center>Copyright &copy; School of Software Engineering</center></h3> </footer>
 			<div class="clearFloat"></div>
 
 		</div>
@@ -360,7 +200,7 @@
 	<div class="clearFloat"></div>
 	<script type="text/javascript">
 		$("#shops").each(function() {
-			var len = 2;
+			var len = 5;
 			/* for(var i=0;i<len;i++ ) {
 				var name = "shopname"+i;
 				console.log(document.getElementById(name).innerHTML);

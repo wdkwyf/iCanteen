@@ -1,5 +1,5 @@
+// Generated 2015-7-6 15:02:17 by Hibernate Tools 3.4.0.CR1
 package com.wuyufei.domain;
-// Generated 2015-7-4 15:27:37 by Hibernate Tools 3.4.0.CR1
 
 import java.util.HashSet;
 import java.util.Set;
@@ -13,8 +13,7 @@ public class Userinfo implements java.io.Serializable {
 	private String password;
 	private String email;
 	private String telephone;
-	private Salesinfo salesinfo;
-	private Bussiness bussiness;
+	private Set saleses = new HashSet(0);
 	private Set orderLists = new HashSet(0);
 
 	public Userinfo() {
@@ -29,14 +28,12 @@ public class Userinfo implements java.io.Serializable {
 	}
 
 	public Userinfo(String username, String password, String email,
-			String telephone, Salesinfo salesinfo, Bussiness bussiness,
-			Set orderLists) {
+			String telephone, Set saleses, Set orderLists) {
 		this.username = username;
 		this.password = password;
 		this.email = email;
 		this.telephone = telephone;
-		this.salesinfo = salesinfo;
-		this.bussiness = bussiness;
+		this.saleses = saleses;
 		this.orderLists = orderLists;
 	}
 
@@ -72,20 +69,12 @@ public class Userinfo implements java.io.Serializable {
 		this.telephone = telephone;
 	}
 
-	public Salesinfo getSalesinfo() {
-		return this.salesinfo;
+	public Set getSaleses() {
+		return this.saleses;
 	}
 
-	public void setSalesinfo(Salesinfo salesinfo) {
-		this.salesinfo = salesinfo;
-	}
-
-	public Bussiness getBussiness() {
-		return this.bussiness;
-	}
-
-	public void setBussiness(Bussiness bussiness) {
-		this.bussiness = bussiness;
+	public void setSaleses(Set saleses) {
+		this.saleses = saleses;
 	}
 
 	public Set getOrderLists() {

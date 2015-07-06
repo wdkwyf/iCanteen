@@ -77,6 +77,7 @@ public class JsonAction extends ActionSupport {
 		body += "Yours sincerely,\niCanteen";
 		emailer.setBody(body);
 		emailer.execute();
+		
 		return "success";
 	}
 

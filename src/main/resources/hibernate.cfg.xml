@@ -11,10 +11,10 @@
   <property name="hibernate.current_session_context_class">jta</property>
   <property name="hibernate.hbm2ddl.auto">update</property>
   <property name="hibernate.enable_lazy_load_no_trans">true</property>
-  <mapping resource="com/wuyufei/domain/Userinfo.hbm.xml"/>
+  <mapping resource="com/wuyufei/domain/Userinfo.hbm.xml"/> 
   <mapping resource="com/wuyufei/domain/HotNews.hbm.xml"/>
   <mapping resource="com/wuyufei/domain/OrderList.hbm.xml"/>
-  <mapping resource="com/wuyufei/domain/Salesinfo.hbm.xml"/>
+  <mapping resource="com/wuyufei/domain/Sales.hbm.xml"/>
   <mapping resource="com/wuyufei/domain/Bussiness.hbm.xml"/>
  </session-factory>
 </hibernate-configuration>

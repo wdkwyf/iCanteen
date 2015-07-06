@@ -48,8 +48,6 @@ public class EmailerAction extends ActionSupport {
 			message.setSubject(subject);
 			message.setText(body);
 			Transport.send(message);
-			System.out.println("send a email!");
-			
 		} catch (Exception e) {
 			e.printStackTrace();
 			return "error";

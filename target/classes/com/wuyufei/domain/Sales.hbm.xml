@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-7-6 15:16:27 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.wuyufei.domain.Sales" table="sales" catalog="db">
+        <id name="salesId" type="java.lang.Integer">
+            <column name="salesId" />
+            <generator class="identity" />
+        </id>
+        <property name="username" type="string">
+            <column name="username" length="45" not-null="true" />
+        </property>
+        <property name="dishname" type="string">
+            <column name="dishname" length="45" not-null="true" />
+        </property>
+        <property name="dishprice" type="float">
+            <column name="dishprice" precision="12" scale="0" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

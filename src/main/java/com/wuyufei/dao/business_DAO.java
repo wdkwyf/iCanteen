@@ -19,4 +19,15 @@ public class business_DAO {
 		session.close();
 		return null;
 	}
+	public Bussiness getBussinessByUsername(String username){
+		Session session = HibernateUtil.getSessionFactory().openSession();
+		String HQL ="FROM Bussiness as b where b.username ='"+username+"'";
+		List<Bussiness> result = session.createQuery(HQL).list();
+		if(result.size() == 1){
+			session.close();
+			return result.get(0);
+		}
+		session.close();
+		return null;
+	}
 }

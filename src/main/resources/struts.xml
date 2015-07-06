@@ -6,7 +6,11 @@
 	<constant name="struts.enable.DynamicMethodInvocation" value="false" />
 	<constant name="struts.devMode" value="false" />
 	<constant name="struts.custom.i18n.resources" value="ApplicationResources" />
+	
 	<package name="default" extends="struts-default" namespace="/">
+	<global-results>
+		<result name="error">../navigation.jsp</result>
+	</global-results>
 		<action name="login" class="com.wuyufei.login.LoginAction">
 			<result type="redirectAction" name="success">
 				<param name="actionName">doReady</param>
@@ -19,7 +23,9 @@
 			<result name="input">Reg.jsp</result>
 		</action>
 		<action name="json" class="com.wuyufei.cart.JsonAction">
-			<result name="success">../navigation.html</result>
+			<result type="redirectAction" name="success">
+				<param name="actionName">doReady</param>
+			</result>
 		</action>
 		<action name="emailer" class="com.wuyufei.cart.EmailerAction">
 			<result name="success">../navigation.html</result>
@@ -28,7 +34,7 @@
 			<result name="success">/jsp/index.jsp</result>
 		</action>
 		<action name="buy" class="com.wuyufei.business.BuyAction">
-			<result name="success">buy.html</result>
+			<result name="success">jsp/buy.jsp</result>
 		</action>
 	</package>
 
