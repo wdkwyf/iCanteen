@@ -56,6 +56,23 @@
 			</ul>
 		</div>
 	</div>
+	<div class="header">
+		<div class="header-top">
+			<div class="container">
+				<div class="logo">
+					<a href="#"><img src="../images/index/foodLogo.png" alt="" /></a>
+				</div>
+				<div class="top-menu">
+					<span class="menu"> </span>
+					<ul class="cl-effect-15">
+						<li><a href="../doReady" data-hover="HOME">HOME</a></li>
+					</ul>
+				</div>
+
+				<div class="clearfix"></div>
+			</div>
+		</div>
+	</div>
 	<div id="site">
 
 		<div id="content">
@@ -91,9 +108,7 @@
 							.getElementById("field1").value;
 				}
 				function message() {
-					alert("Your order has already send to the business,please wait a moment!
-							next will lead you to the homepage...
-");
+					alert("Your order has already send to the business,please wait a moment!\nNext will lead you to the homepage...");
 				}
 			</script>
 			<s:form id="json-form" action="json">

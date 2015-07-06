@@ -56,7 +56,7 @@
 				<div class="top-menu">
 					<span class="menu"> </span>
 					<ul class="cl-effect-15">
-						<li><a href="doReady" data-hover="HOME">HOME</a></li>
+						<li><a href="../doReady" data-hover="HOME">HOME</a></li>
 					</ul>
 				</div>
 
