@@ -59,7 +59,7 @@
 				<%
 					if (str != "Login") {
 				%>
-				<li><a href="jsp/Welcome.jsp"><%=str%></a></li>
+				<li><a href="jsp/salesSet.jsp"><%=str%></a></li>
 				<%
 					}
 				%>
