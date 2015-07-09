@@ -26,7 +26,15 @@ public class LoginAction extends ActionSupport implements ServletRequestAware {
 
 	public String execute() {
 		if (dao.authenticate(getUsername(), getPassword())) {
+			
 			mySession.setAttribute("username", username);
+			
+			//admin check....
+			if(username.equals("admin")) {
+				System.out.println("Now Admin Login...");
+//				return "admin";
+			}
+			
 			return "success";
 		} else {
 			this.addActionError("invalid username or password");

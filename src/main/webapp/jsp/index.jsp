@@ -48,9 +48,11 @@
 			<ul>
 				<%
 					String str = (String) session.getAttribute("username");
+					System.out.println("username is : "+str);
 				%>
 				<%
 					if (str == "Login") {
+						System.out.println("str is login");
 				%>
 				<li><a href="jsp/Login.jsp"><%=str%></a></li>
 				<%
@@ -58,9 +60,15 @@
 				%>
 				<%
 					if (str != "Login") {
+						if(str.equals("admin")) {
 				%>
-				<li><a href="jsp/salesSet.jsp"><%=str%></a></li>
+						<li><a href="jsp/admin.jsp"><%=str%></a></li>
 				<%
+						}else {
+				%>
+						<li><a href="jsp/salesSet.jsp"><%=str%></a></li>
+				<%
+						}
 					}
 				%>
 				<li><a href="jsp/Reg.jsp">Register</a></li>

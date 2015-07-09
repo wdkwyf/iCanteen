@@ -6,21 +6,23 @@
 	<constant name="struts.enable.DynamicMethodInvocation" value="false" />
 	<constant name="struts.devMode" value="false" />
 	<constant name="struts.custom.i18n.resources" value="ApplicationResources" />
-	
+
 	<package name="default" extends="struts-default" namespace="/">
-	<global-results>
-		<result name="error">../navigation.jsp</result>
-	</global-results>
+		<global-results>
+			<result name="error">../navigation.jsp</result>
+		</global-results>
 		<action name="login" class="com.wuyufei.login.LoginAction">
 			<result type="redirectAction" name="success">
 				<param name="actionName">doReady</param>
 			</result>
 			<result name="error">Login.jsp</result>
 			<result name="input">Login.jsp</result>
+			<result name="admin">admin.jsp</result>
 		</action>
 		<action name="reg" class="com.wuyufei.reg.RegAction">
 			<result name="error">Reg.jsp</result>
 			<result name="input">Reg.jsp</result>
+			<result name="success">Welcome.jsp</result>
 		</action>
 		<action name="json" class="com.wuyufei.cart.JsonAction">
 			<result type="redirectAction" name="success">
@@ -35,6 +37,20 @@
 		</action>
 		<action name="buy" class="com.wuyufei.business.BuyAction">
 			<result name="success">jsp/buy.jsp</result>
+		</action>
+		<action name="delete" class="com.wuyufei.domain.DeleteAction">
+			<result name="success">admin.jsp</result>
+			<result name="input">admin.jsp</result>
+		</action>
+		<action name="businessSet" class="com.wuyufei.business.BusinessSetAction">
+			<result type="redirect" name="success">jsp/successBusiness.jsp	</result>
+			<result type="redirect" name="input">jsp/salesSet.jsp	</result>
+		</action>
+		<action name="deleteSales" class="com.wuyufei.sales.SalesDeleteAction">
+			<result type="redirect" name="success">jsp/salesSet.jsp	</result>
+		</action>
+		<action name="addSales" class="com.wuyufei.sales.SalesAddAction">
+			<result type="redirect" name="success">jsp/salesSet.jsp	</result>
 		</action>
 	</package>
 

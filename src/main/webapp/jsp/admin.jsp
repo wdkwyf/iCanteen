@@ -1,20 +1,16 @@
-<%@ page contentType="text/html; charset=UTF-8"%>
-<%@ taglib prefix="s" uri="/struts-tags"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@taglib uri="/struts-tags" prefix="s"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
-<title>Welcome</title>
-
+<link rel="stylesheet" href="../css/admin.css">
 <link rel="stylesheet" href="../css/checkoutbts.css">
-<link rel="stylesheet" href="../css/welcome.css">
-
-
+<title>Admin Dashboard</title>
 </head>
-
 <body>
-<div class="user-desc">
+	<div class="user-desc">
 		<div class="container">
 			<ul>
 				<%
@@ -30,7 +26,7 @@
 				<%
 					if (str != "Login") {
 				%>
-				<li><a href="jsp/Welcome.jsp"><%=str%></a></li>
+				<li><a href="admin.jsp"><%=str%></a></li>
 				<%
 					}
 				%>
@@ -64,18 +60,28 @@
 			</div>
 		</div>
 	</div>
-
-<div id="wel-user">
-	<h2>Hi <s:property value="username" />!</h2><br>
-	<h2>Welcome to join iCanteen.</h2>
-</div>
-
-	<div id="wel-log">
-	<h2>Login now to set your salesinfo?</h2>
-	<a href="Login.jsp">Login &raquo;</a>
+<div id="content">
+    <div id="hi-admin">
+    	<ul>
+	    	<li>
+			<%
+				String adminName = (String)session.getAttribute("username");
+			%>
+			<p><%=adminName %></p>
+		    </li>
+	    </ul>
     </div>
-
-
+	<div id="delete-sales">
+	<h2>Please input the index of saler which need to be deleted</h2>
+	  <s:form action="delete">
+		  <input type="text" placeholder="UserInfo" name="delUserName"></input>
+		
+		  <input type="submit" class="btn" value="Delete"></input>
+	  </s:form>
+	  <s:actionerror cssStyle="color:red;position:relative;left:18%" />
+	 			
+	</div>
+</div>
+	
 </body>
 </html>
-

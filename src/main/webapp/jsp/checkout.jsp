@@ -20,7 +20,8 @@
 	String shopname = (String) session.getAttribute("shopname");
 %>
 <%
-	Bussiness ui = new business_DAO().getBussinessByUsername(shopname);
+	Bussiness ui = null;
+	ui = new business_DAO().getBussinessByUsername(shopname);
 %>
 </head>
 <body>
@@ -99,7 +100,8 @@
 			</div>
 			<div id="pricing">
 				<p id="shipping">
-					<strong>Shipping</strong>:&nbsp&nbsp&nbsp&nbsp€<%=ui.getFare()%>
+				<%if(ui != null) {%>
+					<strong>Shipping</strong>:&nbsp&nbsp&nbsp&nbsp€<%=ui.getFare()%><%} %>
 				</p>
 
 				<p id="sub-total">

@@ -38,4 +38,21 @@ public class User_DAO {
 		}
 		return null;
 	}
+	
+	public boolean delUserinfoByName(String username) {
+		Session session = HibernateUtil.getSessionFactory().openSession();
+		session.getTransaction().begin();
+		final String hql = "delete from Userinfo where username = :username";
+		Query query = session.createQuery(hql);
+		query.setString("username", username);
+		System.out.println("before execute");
+		int result = query.executeUpdate();
+		System.out.println("after execute");
+		session.getTransaction().commit();
+		session.close();
+		System.out.println("update is "+result);
+		if(result >0)
+			return true;
+        return false;
+	}
 }

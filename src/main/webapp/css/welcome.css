@@ -1,0 +1,197 @@
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,dl,dt,dd,ol,nav ul,nav li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline;}
+article, aside, details, figcaption, figure,footer, header, hgroup, menu, nav, section {display: block;}
+ol,ul{list-style:none;margin:0px;padding:0px;}
+blockquote,q{quotes:none;}
+blockquote:before,blockquote:after,q:before,q:after{content:'';content:none;}
+table{border-collapse:collapse;border-spacing:0;}
+a{text-decoration:none;}
+.txt-rt{text-align:right;}
+.txt-lt{text-align:left;}
+.txt-center{text-align:center;}
+.float-rt{float:right;}
+.float-lt{float:left;}
+.clear{clear:both;}
+.pos-relative{position:relative;}
+.pos-absolute{position:absolute;}
+.vertical-base{	vertical-align:baseline;}
+.vertical-top{	vertical-align:top;}
+nav.vertical ul li{	display:block;}
+nav.horizontal ul li{	display: inline-block;}
+img{max-width:100%;}
+/*end reset*/
+@font-face {
+    font-family: 'nexa_lightregular';
+    src: url('../fonts/Nexa_Free_Light-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+body{
+	font-family: 'nexa_lightregular';
+	background-image:url(../images/bgmohu4.png);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+ 	font-weight: 300;
+}
+.user-desc {
+	background: #2a2b2c;
+	padding:0.5em 0;
+}
+.user-desc ul li a {
+	color: #fff;
+	font-size: 16px;
+	font-family: 'Source Sans Pro', sans-serif;
+	text-decoration: none;
+	font-weight: 400;
+}
+.user-desc ul {
+	float:right;
+}
+.user-desc ul li {
+	display: inline-block;
+	margin: 0 5px;
+}
+i.user{
+	width:25px;
+	height:25px;
+	background:url('../images/img-sprite.png') no-repeat 0px 0px;
+	display:inline-block;
+	vertical-align: middle;
+}
+i.cart{
+	width: 30px;
+	height: 30px;
+	background: url('../images/img-sprite.png') no-repeat -25px 0px;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.sales-head h3 {
+	color: #434343;
+	font-weight: 200;
+	font-size: 3.5em;
+	margin-bottom: 1em;
+}
+.sales-head h3 span{
+	background:#39c4da;
+	color:#fff;
+	padding:0 8px;
+}
+.header {
+		background-image:url(../images/buybg1.png);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+	opacity: 0.8;
+}
+.logo {
+	float: left;
+		padding: 0px;
+
+}
+.logo img {
+	box-shadow: 9px 7px 22px 0px rgba(50, 50, 50, 0.18);
+	width: 100%;
+}
+.top-menu ul li {
+	display: inline-block;
+	margin: 0 15px;
+}
+.top-menu ul li a{
+	color:#000000;
+	font-size:18px;
+	font-weight:400;
+	font-family: 'Source Sans Pro', sans-serif;
+	text-decoration:none;
+}
+.top-menu ul li a.active {
+	color: #fff;
+}
+.top-menu {
+	float: right;
+	padding: 2.8em;
+	box-shadow: 9px 7px 22px 0px rgba(50, 50, 50, 0.18);
+}
+.nav_menu-item {
+
+  display: inline-block;
+  position: relative;
+}
+.nav_menu-item:hover {
+  
+}
+.nav_menu-item:hover .nav_submenu {
+
+  display: block;
+}
+.nav_submenu {
+  background: #E02929;
+  font-weight:400;
+  font-family: 'Source Sans Pro', sans-serif;
+  padding:none;
+  margin:none;
+  color: #fff;
+  font-size: 14px;
+  text-transform: none;
+  display: none;
+  position: absolute;
+  width: 100px;
+ 
+}
+
+.cl-effect-15{
+	padding-right: 40px;
+}
+
+.cl-effect-15 a {
+	color: rgba(0,0,0,0.2);
+	font-weight: 700;
+	font-size: 30px;
+	text-shadow: none;
+}
+
+.cl-effect-15 a::before {
+	color: #fff;
+	content: attr(data-hover);
+	position: absolute;
+	-webkit-transition: -webkit-transform 0.3s, opacity 0.3s;
+	-moz-transition: -moz-transform 0.3s, opacity 0.3s;
+	transition: transform 0.3s, opacity 0.3s;
+}
+
+.cl-effect-15 a:hover::before,
+.cl-effect-15 a:focus::before {
+	-webkit-transform: scale(0.9);
+	-moz-transform: scale(0.9);
+	transform: scale(0.9);
+	opacity: 0;
+}
+
+#wel-user{
+	color: #fff;
+	font-size: 36px;
+	padding-left: 30%;
+	padding-top: 5%;
+}
+
+#wel-log{
+	padding-left: 30%;
+}
+#wel-log h2{
+	color: #fff;
+	font-size: 36px;
+}
+#wel-log a{
+	margin-left: 61%;
+	color: #fff;
+	font-size: 20px;
+	outline: none;
+}
+#wel-log a:hover{
+	color: #000;
+
+}

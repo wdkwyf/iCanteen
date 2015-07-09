@@ -19,13 +19,13 @@
 			</s:div>
 			<s:div id="form">
 				<s:form action="reg.action">
-					<s:textfield name="email" key="email" size="20" />
-					<s:textfield name="username" key="username"></s:textfield>
-					<s:password name="password" key="password" maxlength="15"></s:password>
-					<s:password name="confirmPassword" key="confirmPassword"
+					<s:textfield name="email" label="email" size="20" />
+					<s:textfield name="username" label="username"></s:textfield>
+					<s:password name="password" label="password" maxlength="15"></s:password>
+					<s:password name="confirmPassword" label="confirmPassword"
 						maxlength="15"></s:password>
-					<s:textfield name="telephone" key="telephone"></s:textfield>
-					<s:submit method="addCustomer" key="label.add.customer"
+					<s:textfield name="telephone" label="telephone"></s:textfield>
+					<s:submit method="addCustomer" 
 						align="center" />
 				</s:form>
 			</s:div>

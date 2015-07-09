@@ -1,160 +1,309 @@
-html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,dl,dt,dd,ol,nav ul,nav li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline;}
-article, aside, details, figcaption, figure,footer, header, hgroup, menu, nav, section {display: block;}
-ol,ul{list-style:none;margin:0px;padding:0px;}
-blockquote,q{quotes:none;}
-blockquote:before,blockquote:after,q:before,q:after{content:'';content:none;}
-table{border-collapse:collapse;border-spacing:0;}
-a{text-decoration:none;}
-.txt-rt{text-align:right;}
-.txt-lt{text-align:left;}
-.txt-center{text-align:center;}
-.float-rt{float:right;}
-.float-lt{float:left;}
-.clear{clear:both;}
-.pos-relative{position:relative;}
-.pos-absolute{position:absolute;}
-.vertical-base{	vertical-align:baseline;}
-.vertical-top{	vertical-align:top;}
-nav.vertical ul li{	display:block;}
-nav.horizontal ul li{	display: inline-block;}
-img{max-width:100%;}
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p,
+	blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn,
+	em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var,
+	b, u, i, dl, dt, dd, ol, nav ul, nav li, fieldset, form, label, legend,
+	table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas,
+	details, embed, figure, figcaption, footer, header, hgroup, menu, nav,
+	output, ruby, section, summary, time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup,
+	menu, nav, section {
+	display: block;
+}
+
+ol, ul {
+	list-style: none;
+	margin: 0px;
+	padding: 0px;
+}
+
+blockquote, q {
+	quotes: none;
+}
+
+blockquote:before, blockquote:after, q:before, q:after {
+	content: '';
+	content: none;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+a {
+	text-decoration: none;
+}
+
+.txt-rt {
+	text-align: right;
+}
+
+.txt-lt {
+	text-align: left;
+}
+
+.txt-center {
+	text-align: center;
+}
+
+.float-rt {
+	float: right;
+}
+
+.float-lt {
+	float: left;
+}
+
+.clear {
+	clear: both;
+}
+
+.pos-relative {
+	position: relative;
+}
+
+.pos-absolute {
+	position: absolute;
+}
+
+.vertical-base {
+	vertical-align: baseline;
+}
+
+.vertical-top {
+	vertical-align: top;
+}
+
+nav.vertical ul li {
+	display: block;
+}
+
+nav.horizontal ul li {
+	display: inline-block;
+}
+
+img {
+	max-width: 100%;
+}
 /*end reset*/
 @font-face {
-    font-family: 'nexa_lightregular';
-    src: url('../fonts/Nexa_Free_Light-webfont.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-
-}
-body{
 	font-family: 'nexa_lightregular';
-	background-image:url(../images/buybg1.png);
+	src: url('../fonts/Nexa_Free_Light-webfont.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+
+body {
+	font-family: 'nexa_lightregular';
+	background-image: url(../images/buybg1.png);
 	background-position: center;
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	background-size: cover;
- 	font-weight: 300;
+	font-weight: 300;
 }
-#taitou h3{
+
+#taitou h3 {
 	color: white;
 	font-size: 50px;
 	font-family: 'nexa_lightregular';
-	font-weight:400;
+	font-weight: 400;
 	margin-top: 4%;
 }
-#taitou{
-	background:transparent;
+
+#taitou {
+	background: transparent;
 	width: 96%;
 	height: 60px;
 	margin-top: 2%;
 	margin-left: 36%;
- 	position: relative;
- 	
+	position: relative;
 }
-#cur_user{
-	background:transparent;
+
+#cur_user {
+	background: transparent;
 	border: 1px solid lightgray;
 	width: 26%;
 	height: 60px;
-	margin:4% auto 2% auto;
- 	position: relative;
- 	-webkit-border-radius: 0.4em;
+	margin: 4% auto 2% auto;
+	position: relative;
+	-webkit-border-radius: 0.4em;
 	-o-border-radius: 0.4em;
 	-moz-border-radius: 0.4em;
 }
-#cur_user p{
-	font-size:25px;
-	color:#fff;
+
+#cur_user p {
+	font-size: 25px;
+	color: #fff;
 	font-family: 'nexa_lightregular';
-	font-weight:400;
+	font-weight: 400;
 	padding-top: 12px;
 }
+
 .login-form {
-	background:transparent;
+	background: transparent;
 	border: 1px solid lightgray;
 	width: 26%;
-	margin:2% auto 4% auto;
- 	position: relative;
- 	-webkit-border-radius: 0.4em;
+	margin: 2% auto 4% auto;
+	position: relative;
+	-webkit-border-radius: 0.4em;
 	-o-border-radius: 0.4em;
 	-moz-border-radius: 0.4em;
- 	
 }
 
-
-
-.main{
-
-	position:relative;
+.main {
+	position: relative;
 }
-.main h1{
-	font-size:25px;
-	color:#fff;
+
+.main h1 {
+	font-size: 25px;
+	color: #fff;
 	font-family: 'nexa_lightregular';
-	font-weight:400;
+	font-weight: 400;
 	padding-top: 10%;
 	text-align: center;
 }
+
 .main form {
 	width: 80%;
 	margin: 0 auto;
 	padding: 6% 0 9% 0;
 }
+
 .main p {
-text-align: center;
+	text-align: center;
 }
+
 .main form p a {
 	color: #888;
 	font-family: 'nexa_lightregular';
 }
+
 form p a:hover {
-	color:#21A957;
+	color: #21A957;
 }
- input[type="text"]{
-	text-align:left;
+
+input[type="text"] {
+	text-align: left;
 	position: relative;
-	width:40%;
-	padding:3%;
-	background:transparent;
+	width: 40%;
+	padding: 3%;
+	background: transparent;
 	margin-bottom: 6%;
 	font-family: 'nexa_lightregular';
 	color: white;
-	font-weight:600;
+	font-weight: 600;
 	font-size: 16px;
 	outline: none;
 	border: none;
 	border-radius: 5px;
-	border:1px solid #DED6D6;
-	-webkit-appearance:none;
+	border: 1px solid #DED6D6;
+	-webkit-appearance: none;
 }
-#aa{
+input[type="fare"] {
+	text-align: left;
+	position: relative;
+	width: 7%;
+	padding: 3%;
+	background: transparent;
+	margin-bottom: 6%;
+	font-family: 'nexa_lightregular';
+	color: white;
+	font-weight: 600;
+	font-size: 16px;
+	outline: none;
+	border: none;
+	border-radius: 5px;
+	border: 1px solid #DED6D6;
+	-webkit-appearance: none;
+}
+input[type="period"] {
+	text-align: left;
+	position: relative;
+	width: 7%;
+	padding: 3%;
+	background: transparent;
+	margin-bottom: 6%;
+	font-family: 'nexa_lightregular';
+	color: white;
+	font-weight: 600;
+	font-size: 16px;
+	outline: none;
+	border: none;
+	border-radius: 5px;
+	border: 1px solid #DED6D6;
+	-webkit-appearance: none;
+}
+input[type="area"] {
+	text-align: left;
+	position: relative;
+	width: 40%;
+	padding: 3%;
+	background: transparent;
+	margin-bottom: 6%;
+	font-family: 'nexa_lightregular';
+	color: white;
+	font-weight: 600;
+	font-size: 16px;
+	outline: none;
+	border: none;
+	border-radius: 5px;
+	border: 1px solid #DED6D6;
+	-webkit-appearance: none;
+}
+#aa {
 	width: 62%;
 }
-#bb{
+
+#bb {
+	width: 21%;
+}
+#aa1 {
+	width: 62%;
+}
+
+#bb1 {
 	width: 21%;
 }
 #tab #aa {
 	width: 90%;
 }
+
 #tab #bb {
 	width: 33%;
 }
- input[type="text"]:hover, input[type="password"]:hover{
- 	border:1px solid #949494;
-	transition:0.5s;
-	-webkit-transition:0.5s;
-	-moz-transition:0.5s;
-	-o-transition:0.5s;
-	-ms-transition:	0.5s;
- 	
- }
-input[type="submit"]{
+#tab #aa1 {
+	width: 90%;
+}
+
+#tab #bb1 {
+	width: 33%;
+}
+
+input[type="text"]:hover, input[type="password"]:hover {
+	border: 1px solid #949494;
+	transition: 0.5s;
+	-webkit-transition: 0.5s;
+	-moz-transition: 0.5s;
+	-o-transition: 0.5s;
+	-ms-transition: 0.5s;
+}
+
+input[type="submit"] {
 	width: 99%;
 	padding: 3%;
 	background: #21A957;
 	font-family: 'nexa_lightregular';
 	color: #ECECEC;
-	
 	-webkit-text-shadow: 0px 0px 3px #000;
 	-moz-text-shadow: 0px 0px 3px #000;
 	-o-text-shadow: 0px 0px 3px #000;
@@ -163,23 +312,29 @@ input[type="submit"]{
 	outline: none;
 	border: none;
 	cursor: pointer;
-	font-weight:500;
+	font-weight: 500;
 	border-radius: 5px;
 	transition: 0.5s;
-	-webkit-appearance:none;
+	-webkit-appearance: none;
 	-webkit-transition: 0.5s;
 	-moz-transition: 0.5s;
 	-o-transition: 0.5s;
 	-ms-transition: 0.5s;
 }
-input[type="button"]{
+#button{
+	position: absolute;
+	left: 533px;
+	background: #F0E9E4;
+	opacity: 0.8;
+	border-radius: 1px; 
+}
+input[type="button"] {
 	width: 48%;
 	padding: 3%;
 	margin-bottom: 2%;
 	background: #21A957;
 	font-family: 'nexa_lightregular';
 	color: #ECECEC;
-	
 	-webkit-text-shadow: 0px 0px 3px #000;
 	-moz-text-shadow: 0px 0px 3px #000;
 	-o-text-shadow: 0px 0px 3px #000;
@@ -188,193 +343,195 @@ input[type="button"]{
 	outline: none;
 	border: none;
 	cursor: pointer;
-	font-weight:500;
+	font-weight: 500;
 	border-radius: 5px;
 	transition: 0.5s;
-	-webkit-appearance:none;
+	-webkit-appearance: none;
 	-webkit-transition: 0.5s;
 	-moz-transition: 0.5s;
 	-o-transition: 0.5s;
 	-ms-transition: 0.5s;
 }
-input[type="button"]:hover{
-	background:#128A42;
-	color:#fff;
+
+
+
+input[type="button"]:hover {
+	background: #128A42;
+	color: #fff;
 }
 
-input[type="submit"]:hover{
-	background:#128A42;
-	color:#fff;
+input[type="submit"]:hover {
+	background: #128A42;
+	color: #fff;
 }
 
-#foot h2{
-	
+#foot h2 {
 	text-align: center;
 	font-size: 60px;
 	color: #FFFFFF;
 }
 
-@media (max-width:1440px){
+@media ( max-width :1440px) {
 	.login-form {
-	width:30%;
-	margin: 4% auto 4% auto; 
+		width: 30%;
+		margin: 4% auto 4% auto;
 	}
-	#cur_user{
-		width:30%;
-	margin: 5% auto 2% auto;
+	#cur_user {
+		width: 30%;
+		margin: 5% auto 2% auto;
 	}
-	#taitou{
-	margin-top: 2%;
-	margin-left: 32%;
+	#taitou {
+		margin-top: 2%;
+		margin-left: 32%;
 	}
 	.main h1 {
-	padding-top: 23%;
+		padding-top:;
 	}
 	.copy-right {
-	bottom: -26%;
+		bottom: -26%;
 	}
 }
-@media (max-width:1366px){
-	.login-form {
-	width: 32%;
-	margin: 4% auto 4% auto;
-	}
-	#cur_user{
-		width: 32%;
-	margin: 5% auto 4% auto;
-	}
-	#taitou{
-	margin-top: 2%;
-	margin-left: 30%;
 
+@media ( max-width :1366px) {
+	.login-form {
+		width: 32%;
+		margin: 4% auto 4% auto;
 	}
-}
-@media (max-width:1280px){
-	.login-form  {
-		margin:4% auto 0;
-		width:34%;
-	
-}
-#cur_user{
-	margin:4% auto 2% auto;
-		width:34%;
-	
-}
-#taitou{
-			margin-top: 2%;
-	margin-left: 30%;
+	#cur_user {
+		width: 32%;
+		margin: 5% auto 4% auto;
 	}
-}
-@media (max-width:1024px){
-.login-form  {
-		margin:4% auto 0;
-		width:45%;
-	
-}
-#cur_user{
-	margin:5% auto 0;
-		width:45%;
-}
-#taitou{
+	#taitou {
 		margin-top: 2%;
-	margin-left: 22%;
+		margin-left: 30%;
 	}
 }
-@media (max-width:768px){
-	.login-form  {
+
+@media ( max-width :1280px) {
+	.login-form {
+		margin: 4% auto 0;
+		width: 34%;
+	}
+	#cur_user {
+		margin: 4% auto 2% auto;
+		width: 34%;
+	}
+	#taitou {
+		margin-top: 2%;
+		margin-left: 30%;
+	}
+}
+
+@media ( max-width :1024px) {
+	.login-form {
+		margin: 4% auto 0;
+		width: 45%;
+	}
+	#cur_user {
+		margin: 5% auto 0;
+		width: 45%;
+	}
+	#taitou {
+		margin-top: 2%;
+		margin-left: 22%;
+	}
+}
+
+@media ( max-width :768px) {
+	.login-form {
 		margin: 4% auto 0;
 		width: 59%;
 	}
-	#cur_user{
+	#cur_user {
 		margin: 8% auto 0;
 		width: 59%;
 	}
-	#taitou{
-			margin-top: 2%;
-	margin-left: 22%;
+	#taitou {
+		margin-top: 2%;
+		margin-left: 22%;
 	}
 }
-@media (max-width:640px){                                  
+
+@media ( max-width :640px) {
 	.login-form {
-	margin: 4% auto 0;
-	width: 63%;
+		margin: 4% auto 0;
+		width: 63%;
 	}
-	#cur_user{
+	#cur_user {
 		margin: 11% auto 0;
-	width: 63%;
+		width: 63%;
 	}
 	.copy-right {
-	left:36%;
-	bottom:-18%;
+		left: 36%;
+		bottom: -18%;
 	}
-	#taitou{
-			margin-top: 2%;
-	margin-left: 16%;
-	}
-}
-@media (max-width:480px){                                  
-	.login-form {
-	margin: 6% auto 0;
-	width: 74%;
-	
-	}
-#cur_user{
-	margin: 16% auto 0;
-	width: 74%;
-}
-#taitou{
+	#taitou {
 		margin-top: 2%;
-	margin-left: 36%;
+		margin-left: 16%;
+	}
+}
+
+@media ( max-width :480px) {
+	.login-form {
+		margin: 6% auto 0;
+		width: 74%;
+	}
+	#cur_user {
+		margin: 16% auto 0;
+		width: 74%;
+	}
+	#taitou {
+		margin-top: 2%;
+		margin-left: 36%;
 	}
 	.main h1 {
-	font-size: 22px;
+		font-size: 22px;
 	}
 	.head img {
-	width: 78%;
+		width: 78%;
 	}
 	.head {
-	top: -15%;
-	left: 34%;
+		top: -15%;
+		left: 34%;
 	}
 	input[type="text"], input[type="password"], input[type="submit"] {
-	font-weight: 600;
-	margin-bottom: 4%;
+		font-weight: 600;
+		margin-bottom: 4%;
 	}
-@media (max-width:320px){                                  
-	.login-form  {
-		margin:6% auto 0;
-		width: 85%;
-		
-	}
-	#taitou{
+	@media ( max-width :320px) {
+		.login-form {
+			margin: 6% auto 0;
+			width: 85%;
+		}
+		#taitou {
 			margin-top: 2%;
-	margin-left: 36%;
+			margin-left: 36%;
+		}
+		#cur_user {
+			margin: 11% auto 0;
+			width: 85%;
+		}
+		.main h1 {
+			padding-top: 20%;
+			font-size: 20px;
+		}
+		.head img {
+			width: 60%;
+			border: 5px solid rgba(221, 218, 215, 0.23);
+		}
+		.head {
+			top: -15%;
+			left: 36%;
+		}
+		input[type="text"], input[type="password"], input[type="submit"] {
+			font-weight: 600;
+			font-size: 15px;
+		}
+		.main form p a {
+			font-size: 15px;
+		}
+		input[type="submit"] {
+			padding: 4%;
+		}
 	}
-	#cur_user{
-		margin:11% auto 0;
-		width: 85%;
-	}
-	.main h1 {
-	padding-top: 20%;
-	font-size: 20px;
-	}
-	.head img {
-	width: 60%;
-	border: 5px solid rgba(221, 218, 215, 0.23);
-	}
-	.head {
-	top: -15%;
-	left: 36%;
-	}
-	input[type="text"], input[type="password"],input[type="submit"] {
-	font-weight:600;
-	font-size: 15px;
-	}
-	.main form p a {
-	font-size: 15px;
-	}
-	input[type="submit"] {
-	padding: 4%;
-	}
-		
 }

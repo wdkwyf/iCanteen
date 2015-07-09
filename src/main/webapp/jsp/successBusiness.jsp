@@ -1,18 +1,13 @@
-<%@ page contentType="text/html; charset=UTF-8"%>
-<%@ taglib prefix="s" uri="/struts-tags"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
-<title>Welcome</title>
-
+<title>success business</title>
+<link rel="stylesheet" href="../css/successbusiness.css">
 <link rel="stylesheet" href="../css/checkoutbts.css">
-<link rel="stylesheet" href="../css/welcome.css">
-
-
 </head>
-
 <body>
 <div class="user-desc">
 		<div class="container">
@@ -30,7 +25,7 @@
 				<%
 					if (str != "Login") {
 				%>
-				<li><a href="jsp/Welcome.jsp"><%=str%></a></li>
+				<li><a href="salesSet.jsp"><%=str%></a></li>
 				<%
 					}
 				%>
@@ -64,18 +59,17 @@
 			</div>
 		</div>
 	</div>
+<div id="success">
 
-<div id="wel-user">
-	<h2>Hi <s:property value="username" />!</h2><br>
-	<h2>Welcome to join iCanteen.</h2>
+<h2>Set business successfully!
+<br>
+<br>
+     Do you want to set your dishes futhermore?</h2>
+   
+
+     <a href="salesSet.jsp">DishesSet &raquo;</a>
+
 </div>
-
-	<div id="wel-log">
-	<h2>Login now to set your salesinfo?</h2>
-	<a href="Login.jsp">Login &raquo;</a>
-    </div>
-
 
 </body>
 </html>
-

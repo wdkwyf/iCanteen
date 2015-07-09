@@ -35,14 +35,13 @@ input:-webkit-autofill {
 				<input type="password" value="" name="password"
 					onfocus="this.value = '';"
 					onblur="if (this.value == '') {this.value = '';}">
-				<s:actionerror cssStyle="color:red;position:relative;
-				left:18%" />
+
 				<br />
 				<div class="submit">
 					<input type="submit" onclick="myFunction()" value="Login">
 				</div>
 				<p>
-					<a href="#">Forgot Password ?</a>
+					<a href="Reg.jsp">Register ?</a>
 				</p>
 			</s:form>
 		</div>
