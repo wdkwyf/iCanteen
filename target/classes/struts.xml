@@ -37,9 +37,11 @@
 		</action>
 		<action name="buy" class="com.wuyufei.business.BuyAction">
 			<result name="success">jsp/buy.jsp</result>
+			<result name="input">jsp/noSuchShop.jsp</result>
+
 		</action>
 		<action name="delete" class="com.wuyufei.domain.DeleteAction">
-			<result name="success">admin.jsp</result>
+			<result type="redirect" name="success">jsp/admin.jsp</result>
 			<result name="input">admin.jsp</result>
 		</action>
 		<action name="businessSet" class="com.wuyufei.business.BusinessSetAction">
@@ -52,6 +54,7 @@
 		<action name="addSales" class="com.wuyufei.sales.SalesAddAction">
 			<result type="redirect" name="success">jsp/salesSet.jsp	</result>
 		</action>
+
 	</package>
 
 </struts>

@@ -106,12 +106,11 @@ i.cart {
 
 .logo {
 	float: left;
-	margin-left: 7%;
+	margin-left: 9%;
 	padding: 0px;
 }
 
 .logo img {
-	box-shadow: 9px 7px 22px 0px rgba(50, 50, 50, 0.18);
 	width: 100%;
 }
 

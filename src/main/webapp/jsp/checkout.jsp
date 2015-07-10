@@ -15,7 +15,7 @@
 <link rel="stylesheet" type="text/css" href="../css/cartStyle.css">
 <link href="../css/checkout.css" rel="stylesheet" type="text/css"
 	media="all" />
-<title>Insert title here</title>
+<title>Checkout</title>
 <%
 	String shopname = (String) session.getAttribute("shopname");
 %>

@@ -3,7 +3,7 @@
 <html>
 <head>
 <s:head />
-<title>爱食堂reg</title>
+<title>register</title>
 <link href="<s:url value="../css/style_re.css"/>" rel="stylesheet"
 	type="text/css" />
 </head>

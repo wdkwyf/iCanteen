@@ -15,7 +15,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
 <title>edit for business</title>
 <link href="../css/salesIn.css" rel='stylesheet' type='text/css' />
-<title>SalesSet</title>
+<title>SalesinfoSet</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script type="application/x-javascript">
 	
@@ -129,7 +129,6 @@
 			%>
 
 			<h1>New Dishes</h1>
-			>
 			<s:form action="addSales">
 
 				<div class="submit">

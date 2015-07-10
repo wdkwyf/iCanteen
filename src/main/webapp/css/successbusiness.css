@@ -81,7 +81,7 @@ i.cart{
 	padding:0 8px;
 }
 .header {
-		background-image:url(../images/buybg1.png);
+		background-image:url(../images/buybg.png);
 	background-position: center;
 	background-repeat: no-repeat;
 	background-attachment: fixed;
@@ -93,7 +93,6 @@ i.cart{
 
 }
 .logo img {
-	box-shadow: 9px 7px 22px 0px rgba(50, 50, 50, 0.18);
 	width: 100%;
 }
 .top-menu ul li {
@@ -113,7 +112,6 @@ i.cart{
 .top-menu {
 	float: right;
 	padding: 2.8em;
-	box-shadow: 9px 7px 22px 0px rgba(50, 50, 50, 0.18);
 }
 .nav_menu-item {
 

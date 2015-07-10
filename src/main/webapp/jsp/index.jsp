@@ -14,7 +14,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>爱食堂</title>
+<title>iCanteen</title>
 <link rel="stylesheet" type="text/css" href="css/style.css">
 <script type="text/javascript" src="js/jquery.js"></script>
 <script type="text/javascript" src="js/shop.js"></script>
@@ -48,11 +48,11 @@
 			<ul>
 				<%
 					String str = (String) session.getAttribute("username");
-					System.out.println("username is : "+str);
+							System.out.println("username is : "+str);
 				%>
 				<%
 					if (str == "Login") {
-						System.out.println("str is login");
+								System.out.println("str is login");
 				%>
 				<li><a href="jsp/Login.jsp"><%=str%></a></li>
 				<%
@@ -60,25 +60,27 @@
 				%>
 				<%
 					if (str != "Login") {
-						if(str.equals("admin")) {
+								if(str.equals("admin")) {
 				%>
-						<li><a href="jsp/admin.jsp"><%=str%></a></li>
+				<li><a href="jsp/admin.jsp"><%=str%></a></li>
 				<%
-						}else {
+					}else {
 				%>
-						<li><a href="jsp/salesSet.jsp"><%=str%></a></li>
+				<li><a href="jsp/salesSet.jsp"><%=str%></a></li>
 				<%
-						}
 					}
+							}
 				%>
 				<li><a href="jsp/Reg.jsp">Register</a></li>
 				<li><a href="jsp/checkout.jsp">Checkout</a></li>
 				<li><i class="cart"></i><a href="jsp/cart.jsp">Cart </a></li>
 				<%
-					if (str != "Login"){ 
+					if (str != "Login"){
 				%>
 				<li><a href="jsp/logout.jsp">Logout</a></li>
-				<%} %>
+				<%
+					}
+				%>
 			</ul>
 		</div>
 	</div>
@@ -99,9 +101,10 @@
 							</ul></li>
 						<li>
 							<div class="search-box">
-								<form action="#">
-									<input type="text"> <input type="submit" value="">
-								</form>
+								<s:form action="buy">
+									<input type="text" name="bid">
+									<input type="submit" value="">
+								</s:form>
 							</div>
 						</li>
 					</ul>
@@ -134,14 +137,15 @@
 			<div class="part">
 				<h2>&nbsp&nbspTop 5:</h2>
 				<%
-					int len = 5;
-													for (int i = 0; i < len; i++) {
-													Bussiness bi = bl.get(i);  //need to get	
-													String s = bi.getUsername();
+					int len = 6;
+															for (int i = 0; i < len; i++) {
+															Bussiness bi = bl.get(i);  //need to get	
+															String s = bi.getUsername();
+															if(s.equals("admin")) continue;
 				%>
 				<div class="grid" id="shops">
 					<div class="preview">
-						<a href="" title=""><img src="images/index/food.png" alt="#"></a>
+						<a href="" title=""><img src="images/users/user_<%=i %>.png" alt="#"></a>
 					</div>
 					<div class="data">
 						<h5>
@@ -167,14 +171,16 @@
 
 				<h2>&nbsp&nbspAll Business:</h2>
 				<%
-					int len2 = 6;
-													for (int i = 0; i < len2; i++) {
-													Bussiness bi = bl.get(i);
-													String s = bi.getUsername();
+					int len2 = 7;
+															for (int i = 0; i < len2; i++) {
+															Bussiness bi = bl.get(i);
+															String s = bi.getUsername();
+															if(s.equals("admin")) continue;
 				%>
 				<div class="grid" id="shops">
 					<div class="preview">
-						<a href="" title=""><img src="images/index/food.png" alt="#"></a>
+						<a href="" title=""><img src="images/users/user<%=i%>.png"
+							alt="#"></a>
 					</div>
 					<div class="data">
 						<h5>
@@ -200,7 +206,11 @@
 
 				<div class="clearFloat"></div>
 			</div>
-			<footer> <h3><center>Copyright &copy; School of Software Engineering</center></h3> </footer>
+			<footer>
+			<h3>
+				<center>Copyright &copy; School of Software Engineering</center>
+			</h3>
+			</footer>
 			<div class="clearFloat"></div>
 
 		</div>
@@ -208,7 +218,7 @@
 	<div class="clearFloat"></div>
 	<script type="text/javascript">
 		$("#shops").each(function() {
-			var len = 5;
+			var len = 7;
 			/* for(var i=0;i<len;i++ ) {
 				var name = "shopname"+i;
 				console.log(document.getElementById(name).innerHTML);

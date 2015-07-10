@@ -28,7 +28,7 @@
 <link href="css/checkout.css" rel="stylesheet" type="text/css"
 	media="all" />
 
-<title>Insert title here</title>
+<title>Buy</title>
 </head>
 <body>
 	<div class="user-desc">
@@ -111,7 +111,7 @@
 						Sales siItem = si.get(i);
 				%>
 				<div class="each_item">
-					<img src="images/index/food.png">
+					<img src="images/dishes/dish<%=i %>.png">
 					<div class="product-description"
 						data-name="<%=siItem.getDishname()%>"
 						data-price="<%=siItem.getDishprice()%>">

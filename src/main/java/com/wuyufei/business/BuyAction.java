@@ -9,10 +9,20 @@ import org.apache.struts2.ServletActionContext;
 
 import com.opensymphony.xwork2.ActionSupport;
 import com.wuyufei.dao.Buy_DAO;
+import com.wuyufei.dao.business_DAO;
 import com.wuyufei.domain.Sales;
 
 public class BuyAction extends ActionSupport {
 	private String bid ="";
+
+	
+	@Override
+	public void validate() {
+		if(new business_DAO().getBussinessByUsername(bid) == null){
+			this.addActionError("no such business");
+		}
+		
+	}
 
 	@Override
 	public String execute() throws Exception {
