@@ -1,4 +1,9 @@
-# iCanteen
-Java ee course project
+This project is powered by **Tomcat** 
+Database: **Mysql**
+Framework: **struts2**
 
-powered by Tomcat and use Struts2 to help develop
+IDE: eclipse javaee
+
+
+
+> Written with [StackEdit](https://stackedit.io/).
